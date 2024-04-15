@@ -150,10 +150,10 @@ pie(paperlessbilling_churn_percentages,
     labels = paste(names(paperlessbilling_churn_percentages), "(", round(paperlessbilling_churn_percentages * 100), "%)"),
     main = "Distribution of Churn for People without Paperless Billing")
 
-### The churn rate is 34% for individuals with Paperless Billing, while it's 16% for those without Paperless Billing ###
+### Churn percent is higher in case of cutsomers having paperless billing option.
 
 # Churn by Dependents
-dependents_churn_percentage <- prop.table(table(df_churn$PaperlessBilling, df_churn$Churn), margin = 1)
+dependents_churn_percentage <- prop.table(table(df_churn$Dependents, df_churn$Churn), margin = 1)
 
 # People with Dependents
 dependents_churn_percentages <- dependents_churn_percentage["Yes", ]
